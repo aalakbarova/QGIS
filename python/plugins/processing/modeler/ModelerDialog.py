@@ -433,4 +433,8 @@ class ModelerDialog(QgsModelDesignerDialog):
                 )
             )
         )
+        # Because we set text above, the file will be marked as modified,
+        # and we get a warning about unsaved changes on close.
+        # To avoid that, manually mark the file as unchanged
+        dlg.setHasChanged(False)
         dlg.show()
